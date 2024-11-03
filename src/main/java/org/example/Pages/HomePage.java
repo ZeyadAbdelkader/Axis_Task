@@ -1,7 +1,5 @@
-package Pages;
+package org.example.Pages;
 
-import org.example.Pages.BasePage;
-import org.example.Pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -19,9 +17,9 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='label'][normalize-space()='Account']"))).click();
 
     }
-    public Pages.RegistrationPage ClickOnRegisterBtn() {
+    public org.example.Pages.RegistrationPage ClickOnRegisterBtn() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Register']"))).click();
-        return new Pages.RegistrationPage(driver);
+        return new org.example.Pages.RegistrationPage(driver);
 
     }
 

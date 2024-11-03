@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 public class LoginWithInvalidPassword extends BaseTest{
     SoftAssert softAssert;
-    Pages.HomePage homePage;
+    org.example.Pages.HomePage homePage;
     LoginPage loginPage;
     DashboardPage dashboardPage;
 
@@ -26,7 +26,7 @@ public class LoginWithInvalidPassword extends BaseTest{
     }
     @Test(alwaysRun = true, dataProvider = "UserRegistration",dataProviderClass = ExcelReader.class)
     public void LoginWithInvalidPassword(UserRegistration data) {
-        homePage = new Pages.HomePage(driver);
+        homePage = new org.example.Pages.HomePage(driver);
         homePage.ClickOnAccountsBtn();
         loginPage=homePage.ClickOnLoginBtn();
         loginPage.EnterValidEmailAndPassword(data.getEmail(),data.getPassword());

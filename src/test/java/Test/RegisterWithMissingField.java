@@ -11,8 +11,8 @@ import java.lang.reflect.Method;
 
 public class RegisterWithMissingField extends BaseTest{
     SoftAssert softAssert;
-    Pages.HomePage homePage;
-    Pages.RegistrationPage registrationPage;
+    org.example.Pages.HomePage homePage;
+    org.example.Pages.RegistrationPage registrationPage;
 
 
     @BeforeMethod(alwaysRun = true)
@@ -23,7 +23,7 @@ public class RegisterWithMissingField extends BaseTest{
     }
     @Test(alwaysRun = true, dataProvider = "UserRegistration",dataProviderClass = ExcelReader.class)
     public void RegisterWithMissingField(UserRegistration data) {
-        homePage = new Pages.HomePage(driver);
+        homePage = new org.example.Pages.HomePage(driver);
         homePage.ClickOnAccountsBtn();
         registrationPage=homePage.ClickOnRegisterBtn();
         registrationPage.EnterCredentials(data.getFirstName(), data.getLastname(), data.getEmail(),data.getPassword(), data.getConfirmPassword());
